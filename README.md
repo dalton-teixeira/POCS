@@ -47,7 +47,8 @@ feature files
 
     - Working 
       - Assure execution prior to all features execution
-      - 
+      - Maybe data pull can work as servie where fills PO properties for each data
+        - To use as PO properties on feature files
 
 - Improve log file to have meanfull content to dubby guy be able to work upon framework
 
