@@ -1,4 +1,13 @@
 # POCS
+Frameworks 
+  - _lodash
+  - cucumber
+  - yadda
+  - mocha
+  - cucumber-autocomplete
+  - cucumber-step-into
+  - jshint for atom
+  - GraphQL
 
 feature files
   - steps regex
