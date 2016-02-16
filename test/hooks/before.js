@@ -10,4 +10,5 @@ BeforeHook = module.exports = function (done) {
 
     this.browser = WebdriverIO.remote(options);
     this.browser.init().call(done);
+    this.networkTimeout = 200000;
 };

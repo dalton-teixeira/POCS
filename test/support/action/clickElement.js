@@ -1,15 +1,18 @@
 
-module.exports = function (action, type, element, done) {
+module.exports = function (element, done) {
 
-    var t = require('../pageObjects/login');
+    var eleMap = require('../../frameworkTest/test').ElementsMap;
 
-    debugger;
+    /*for(var key in eleMap) {
+      console.log("objects[key]: " + eleMap[key]);
+    }*/
 
-    var elem = (type === 'link') ? '=' + element : element,
-        method = (action === 'click') ? 'click' : 'doubleClick';
+    //this.pageObjectMap = new Map();
 
+    console.log("eleMap[element]: " + eleMap[element]);
 
-
-    this.browser[method](elem)
+    this.browser
+        .waitForVisible(eleMap[element], this.networkTimeout)
+        .click(elem)
         .call(done);
 };

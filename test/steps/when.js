@@ -1,6 +1,6 @@
 module.exports = function () {
     this
-        .when(/^I (click|doubleclick) on the (link|button|element)* "$string"$/,
+        .when(/^I click on the "$string"$/,
             require('../support/action/clickElement'))
 
         .when(/^I (add|set) "$string" to the inputfield "$string"$/,

@@ -1,5 +1,5 @@
 var Login = {
-    loginButton: '.c-login__button',
+    loginButton: 'button=Login',
     emailInput: '#email',
     passwordInput: '#password',
     nextButton: '.auth-form-body > [type="submit"]'
