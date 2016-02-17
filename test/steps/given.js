@@ -3,6 +3,9 @@ module.exports = function () {
         .given(/I open the (url|site) "$string"$/,
             require('../support/action/openWebsite'))
 
+        .given(/I open the browser$/,
+            require('../support/action/openBrowser'))
+
         .given(/^the element "$string" is( not)* visible$/,
             require('../support/check/isVisible'))
 

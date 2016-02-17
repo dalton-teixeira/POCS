@@ -1,14 +1,25 @@
-module.exports = function (falseCase, value, done) {
-    this.browser
-        .url()
-        .then(function (result) {
-            if (falseCase) {
-                result.value.should.not.contain(value, 'Expected URL (' + result.value + ') not to contain "' + value + '"');
-            } else {
-                result.value.should.contain(value, 'Expected URL (' + result.value + ') to contain "' + value + '"');
-            }
+module.exports = function (falseCase, expected, done) {
+  var result = false;
+  this.browser.waitUntil(function(){
+    try{
+      return this.url().then(function(res, err){
+        return res.value.indexOf(expected) >= 0 && !falseCase;
+      });
+    }
+    catch(e){
+      return false;
+    }
+  }, this.networkTimeout).then(function(){
+    this.url().then(function(res, err){
+      var url = res.value;
+      if (falseCase) {
+          url.should.not.contain(expected, 'Expected URL (' + url + ') not to contain "' + expected + '"');
+      } else {
+          url.should.contain(expected, 'Expected URL (' + url + ') to contain "' + expected + '"');
+      }
+    });
+   }).call(done);
+/*
 
-            return this;
-        })
-        .call(done);
+*/
 };

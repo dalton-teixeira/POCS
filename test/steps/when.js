@@ -3,6 +3,9 @@ module.exports = function () {
         .when(/^I click on the "$string"$/,
             require('../support/action/clickElement'))
 
+        .when(/^I click on the "$string" to show "$string"$/,
+            require('../support/action/clickElementAndWaitFor'))
+
         .when(/^I (add|set) "$string" to the inputfield "$string"$/,
             require('../support/action/setInputField'))
 
@@ -42,9 +45,9 @@ module.exports = function () {
         .when(/^I focus the last opened (window|tab)$/,
             require('../support/action/focusLastOpenedWindow'))
 
-        .when(/^I log in to site with username "$string" and password "$string"$/,
+        /*.when(/^I log in to site with username "$string" and password "$string"$/,
             require('../support/custom/login'))
-
+              */
         .when(/^I select the (\d+)(st|nd|rd|th) option for element "$string"$/,
             require('../support/action/selectOptionByIndex'))
 

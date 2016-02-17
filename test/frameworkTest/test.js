@@ -1,14 +1,19 @@
-var path = require('path'),
-  fs = require('fs'),
-  merge = require('deepmerge'),
-  pageObjsPath = path.join(__dirname, '..', 'support/pageObjects'),
-  pos = fs.readdirSync(pageObjsPath),
-  ElementsMap = {};
 
-pos.forEach(function(po){
-  var poElements = require(path.join(pageObjsPath, po));
-  ElementsMap = merge(ElementsMap, poElements);
+//console.log(require('../support/DataMap'));
+//console.log(require('../support/PageMap'));
 
-});
 
-module.exports = ElementsMap;
+var test = require('../support/PageMap');
+
+test.funcOne = function(){
+  console.log(this);
+};
+
+test.funcOne();
+
+//console.log(test.
+/*for(var key in eleMap) {
+  console.log("objects[key]: " + eleMap[key]);
+}*/
+
+//this.pageObjectMap = new Map();

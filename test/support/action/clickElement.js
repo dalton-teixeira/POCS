@@ -1,18 +1,10 @@
 
 module.exports = function (element, done) {
 
-    var eleMap = require('../../frameworkTest/test').ElementsMap;
 
-    /*for(var key in eleMap) {
-      console.log("objects[key]: " + eleMap[key]);
-    }*/
-
-    //this.pageObjectMap = new Map();
-
-    console.log("eleMap[element]: " + eleMap[element]);
-
-    this.browser
-        .waitForVisible(eleMap[element], this.networkTimeout)
-        .click(elem)
-        .call(done);
+  var selector = this.pageMap[element];
+  this.browser
+    .waitElemReady(selector, this.networkTimeout)
+    .click(selector)
+    .call(done);
 };
