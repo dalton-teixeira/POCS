@@ -5,6 +5,10 @@
     
   Organize folders, split project code from framework code [code to change from code to do not touch]
 
+  Fix atom plugin and commit separatly
+   cucumber go into step
+   Autocomplete
+
   *Jenkins
     *Schedule
     *Report 
